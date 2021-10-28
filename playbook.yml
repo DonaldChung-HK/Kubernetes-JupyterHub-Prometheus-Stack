@@ -1,0 +1,18 @@
+- hosts: localhost # Kubectl is configured from this machine
+  roles:
+    - deploy_prometheus
+  vars:
+    # For finding jupyterhub deployment
+    # Helm name of the service
+    jhub_deployed_name: jupyterhub
+    # K8s namespace
+    jhub_namespace: jupyterhub
+
+
+
+    # Helm name of the prometheus service
+    prometheus_deployed_name: prometheus
+    # K8s namespace
+    prometheus_namespace: prometheus
+    # Grafana dashboard admin password
+    grafana_password: "temp_password"
